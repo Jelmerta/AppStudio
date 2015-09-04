@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Hello World</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="button_1_text">Rock</string>
+    <string name="button_2_text">Paper</string>
+    <string name="button_3_text">Scissors</string>
+    <string name="users_name_edit_text">Input box</string>
 </resources>

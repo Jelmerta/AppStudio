@@ -4,13 +4,54 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
+    public enum Hands {
+        ROCK, PAPER, SCISSORS
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final Button firstButton = (Button) findViewById(R.id.firstButton);
+        final Button secondButton = (Button) findViewById(R.id.firstButton);
+        final Button thirdButton = (Button) findViewById(R.id.firstButton);
+
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Random randomGenerator = new Random();
+                int randomInt = randomGenerator.nextInt(3);
+                String outcome;
+                switch(randomInt) {
+                    case 0:
+                        outcome = "You lose!";
+                        break;
+                    case 1:
+                        outcome = "You win!";
+                        break;
+                    case 2:
+                        outcome = "It's a tie!";
+                        break;
+                    default:
+                        outcome = "wowa a bug!";
+                }
+                final TextView outcomeText = (TextView) findViewById(R.id.outcome);
+                outcomeText.setText(outcome);
+            }
+        };
+
+        firstButton.setOnClickListener(onClickListener);
+        secondButton.setOnClickListener(onClickListener);
+        thirdButton.setOnClickListener(onClickListener);
     }
 
     @Override
