@@ -1,12 +1,5 @@
-/* 1.d Eagle extends from Bird, which means that the super constructor without arguments will be called, which indeed sets the number of legs to 2.
- *
- * 
- * 
- * 
- * 
- *
- * 1.c
- *
+/* 1.d Eagle extends from Bird, which means that the super constructor without arguments 
+ * will be called, which indeed sets the number of legs to 2.
  */
 
 class Animal {
@@ -89,6 +82,6 @@ class AnimalTest {
 
 	  a = b;
 	  a.talk();
-	  //a.fly(); a is still an animal, if you want to do this, you will have to cast it to a bird.
+	  //a.fly(); b will be upcasted to an animal. Because there is no function fly in animal, this is not possible. (polymorphism would be required)
    }
 }
